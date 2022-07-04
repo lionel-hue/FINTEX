@@ -1,0 +1,211 @@
+
+<!--
+ - actually i just started the build, the site is lacking 
+ - many functional materials like a complete sign in/up page, 
+ - side menu nav etc... :)
+ - 
+ -->
+
+
+
+window.onload=()=>{
+    let main_section = document.querySelector('#main_section')
+     let logo_main = document.querySelector('#logo_main')
+
+     setTimeout(()=>{
+         main_section.style.display= 'block'
+         logo_main.style.display = "none"
+     },5000)
+}
+
+<!DOCTYPE html>
+<html>
+<head> 
+       <link href="./style.css" rel="stylesheet">
+         <script src="./script.js"> </script>
+
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+<style>
+  *{
+ user-select:none;
+ box-sizing:border-box;
+ font-family: 'Rubik', sans-serif;
+}
+
+body{
+  background:white;
+  margin:0;
+  overflow:hidden;
+}
+
+#logo_container{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ position:absolute;
+ top:0;
+ left:0;
+ right:0;
+ bottom:0;
+}
+
+#logo_container .logo{
+  display:block;
+  width:20em;
+  transition:1s;
+  animation-name:swell;
+  animation-duration:3s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes swell{
+    from{width:20em;}
+     50%{width:30%;}
+      to{width:20em;}
+}
+
+#logo_main .logo_text_container{
+ display:flex;
+ width:100%;
+ justify-content:center;
+ margin-top:30%;
+}
+
+#logo_main .logo_text_container p{ 
+ font-weight:900;
+ color:dodgerblue;
+ font-size:5rem;
+}
+
+#main_section{
+    display:none;
+   }
+
+#action_bar{
+    width:100%;
+    height:4em;
+    background:white;
+    position:fixed;
+    top:0;
+    left:0;
+    border-bottom-left-radius:0.85rem;
+    border-bottom-right-radius:0.85rem;
+    box-shadow:0 3px 3px rgba(0,0,0,0.15);
+    justify-content:left;
+    align-items:center;
+    display:flex;
+    z-index:3;
+   }
+   
+   #action_bar .logo{
+    width:5.95rem;
+   }
+   
+   #action_bar p{
+    color:dodgerblue;
+    font-weight:900;
+    font-size:1.5rem;
+   }
+
+#home_container{
+ display:block;
+ background-image:url("https://i.ibb.co/BTjQn71/background.jpg");
+ height:100vh;
+ width: 100vw;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ position:absolute;
+ top:0;
+ left:0;
+}
+
+#home_container >p,section{
+ width:100%;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+#home_container .title{
+  margin-top:8%;
+  color:white;
+  font-size:4.65rem;
+}
+
+#home_container .description{
+ margin-top:-3.5%;
+}
+
+#home_container .description b{
+    color:white;
+    font-size:1.25rem;
+    font-weight:bold;
+    width:30%;
+    word-wrap:break-word;
+    text-align:center;
+  }
+
+  #home_container .sign_up{
+    width:10%;
+    height:3em;
+    background:rgba(0,0,0,0.19);
+    border-radius:2rem;
+    margin:16%;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    color:white;
+    font-weight:900;
+    box-shadow:0px 3px 3px white inset; 
+    transition:0.75s;
+  }
+
+   #home_container .sign_up:hover{
+    background:dodgerblue;
+   }  
+
+
+</style>
+
+  <script>
+window.onload=()=>{
+    let main_section = document.querySelector('#main_section')
+     let logo_main = document.querySelector('#logo_main')
+
+     setTimeout(()=>{
+         main_section.style.display= 'block'
+         logo_main.style.display = "none"
+     },5000)
+}
+   </script>
+
+</head>
+ <body>
+     <div id=logo_main>
+     <div id="logo_container">
+      <img src="https://i.ibb.co/s1wRrrG/20220704-092425.png" alt="" class="logo">     
+       </div>
+       <div class="logo_text_container">  <p> FINTEX</p> </div>
+        </div>
+    
+
+      <section id="main_section">
+        <div id="action_bar"> 
+            <img src="https://i.ibb.co/s1wRrrG/20220704-092425.png" alt="" class="logo">
+             <p>FINTEX</p>
+                     </div>
+
+        <div id="home_container">
+               <p class="title">Welcome!</p>
+               <p class="description"><b>fintex, fintex is here to help companies, businesses, owners 
+                 better manage their financial operations and progress with utiliing specialied services 
+                 . Fintex is ready to make life easy :)</b></p>
+               <section> <div class="sign_up">sign up</div> </section>
+                   </div>
+                    </section>
+        </div>
+ </body>
+</html>
