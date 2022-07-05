@@ -7,17 +7,14 @@
  -->
 
 
+
 <!DOCTYPE html>
 <html>
 <head> 
        <link href="./style.css" rel="stylesheet">
          <script src="./script.js"> </script>
-
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-
-<style>
+ 
+ <style>
   *{
  user-select:none;
  box-sizing:border-box;
@@ -99,16 +96,43 @@ body{
     font-size:1.5rem;
    }
 
+   #action_bar .sign_up_container{
+     width:100%;
+     display:flex;
+     align-items:center;
+     justify-content:flex-end;
+   }
+
+   #action_bar .sign_in{
+    width:10%;
+    height:3em;
+    background:rgba(0,0,0,0.19);
+    border-radius:2rem;
+    margin:16%;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    color:white;
+    font-weight:900;
+    box-shadow:0px 3px 3px white inset; 
+    transition:0.75s;
+    margin-right:3%;
+  }
+
+   #action_bar .sign_in:hover{
+    background:rgb(93, 6, 143);
+   }  
+
 #home_container{
  display:block;
  background-image:url("https://i.ibb.co/BTjQn71/background.jpg");
- height:100vh;
- width: 100vw;
  background-repeat: no-repeat;
  background-size: 100% 100%;
  position:absolute;
  top:0;
  left:0;
+ bottom:0;
+ right:0;
 }
 
 #home_container >p,section{
@@ -120,7 +144,7 @@ body{
 
 #home_container .title{
   margin-top:8%;
-  color:white;
+  color:rgb(93, 6, 143);
   font-size:4.65rem;
 }
 
@@ -153,13 +177,148 @@ body{
   }
 
    #home_container .sign_up:hover{
-    background:dodgerblue;
+    background:rgb(93, 6, 143);
    }  
 
+   #registration_space{
+     position:fixed;
+     top:0;
+     left:0;
+     width:100vw;
+     height:100vh;
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     z-index:3;
+     transition:1s;
+   }
 
-</style>
+   #registration_space .sign_up_page, .sign_in_page{
+    background:white;
+    width:65vw;
+    min-height:30vh;
+    max-height:65vh;
+    border-radius:0.96rem;
+    box-shadow:3px 3px 3px rgba(0,0,0,0.15), -3px -3px 3px rgba(0,0,0,0.15);
+    border-bottom:3px solid dodgerblue;
 
-  <script>
+   }
+
+   #registration_space .sign_up_page{
+      display:block;      
+   }
+
+   #registration_space .sign_in_page{
+    display:none;           
+ }
+
+  .sign_up_page section, .sign_in_page section{
+    width:100%; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+ }
+
+ .sign_up_page section p, .sign_in_page section p{
+  width:15%;
+  height:2em;
+  background:dodgerblue;
+  border-radius:2rem;
+  margin-top:2%;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  color:white;
+  font-weight:900;
+  margin-bottom:4%;
+}
+
+
+ .sign_up_page input[type=text],input[type=email],input[type=password],
+ .sign_in_page input[type=email],input[type=password]{
+   border:none;
+   width:60%;
+   height:2.2em;
+   background:rgba(0,0,0,0.19);
+   margin-bottom:4%;
+   border-top-left-radius:.5rem;
+   border-top-right-radius:.5rem;
+   transition:.5s;
+   font-weight:900;
+   font-size:0.95rem;
+   text-align:center;
+   color:rgb(93, 6, 143);
+ }
+
+ .sign_up_page input[type=text]:focus,input[type=email]:focus,input[type=password]:focus,
+ .sign_in_page input[type=email]:focus,input[type=password]:focus{
+   outline:none;
+   background-color:white;
+   border-bottom:3px solid rgb(93, 6, 143);
+   text-align:left;
+ }
+
+ .sign_up_page input[type=text]::placeholder,input[type=email]::placeholder,input[type=password]::placeholder,
+ .sign_in_page input[type=email]::placeholder,input[type=password]::placeholder{
+   color:rgb(93, 6, 143);
+   text-align:center;
+ }
+
+ .sign_up_page input[type=button], .sign_in_page input[type=button]{
+  width:13%;
+  height:3em;
+  background:rgba(0,0,0,0.19);
+  border-radius:2rem;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  color:white;
+  font-weight:900;
+  margin-bottom:12%;
+  border:none;
+  box-shadow:0px 3px 3px white inset;
+  transition:.5s;
+ }
+
+ .sign_up_page input[type=button]:hover, .sign_in_page input[type=button]:hover{
+   background:rgb(93, 6, 143);
+ }
+
+ .sign_up_page input[type=button]:focus, .sign_in_page input[type=button]:focus{
+   outline:none;
+ }
+
+ .sign_up_page div, .sign_in_page div{
+   margin-top:0;
+   width:100%;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   position:absolute;
+   top:25%;
+   left:19%;
+   background:rgba(0,0,0,0.19);
+   border-radius:50%;
+   width:2.5vw;
+   height:2.5vw;
+ }
+
+ .sign_up_page div span, .sign_in_page div span{
+  color:rgb(93, 6, 143);
+ }
+ </style>
+ 
+ <script>
+   
+/********
+ * actually i just started the build, the site is lacking 
+ * many functional materials like a complete sign in/up page, 
+ * side menu nav etc... :)
+ * 
+ */
+
+
+
 window.onload=()=>{
     let main_section = document.querySelector('#main_section')
      let logo_main = document.querySelector('#logo_main')
@@ -167,10 +326,49 @@ window.onload=()=>{
      setTimeout(()=>{
          main_section.style.display= 'block'
          logo_main.style.display = "none"
-     },5000)
-}
-   </script>
+     },1000)
 
+     let regSpace = document.getElementById("registration_space"),
+         sign_up = document.querySelectorAll("#home_container section .sign_up")[0],
+         sign_in = document.querySelectorAll("#action_bar .sign_up_container .sign_in")[0]
+      sign_up.onclick=function(){
+
+         if(regSpace.style.top != 0){
+             regSpace.style.top = 0
+             regSpace.getElementsByClassName('sign_up_page')[0].style.display="block"
+             regSpace.getElementsByClassName('sign_in_page')[0].style.display="none"
+         }
+         else{regSpace.style.top= "-100%"}
+      }
+      
+      sign_in.onclick=function(){
+
+        if(regSpace.style.top == "-100%"){
+            regSpace.style.top = 0
+            regSpace.getElementsByClassName('sign_up_page')[0].style.display="none"
+            regSpace.getElementsByClassName('sign_in_page')[0].style.display="block"
+        }
+        else{regSpace.style.top= "-100%"}
+     }
+
+     let signUpBackBTN = document.querySelectorAll("#registration_space .sign_up_page div span")[0],
+       signInBackBTN = document.querySelectorAll("#registration_space .sign_in_page div span")[0]
+     signUpBackBTN.onclick=()=>{
+         document.querySelector("#registration_space").style.top="-100%"
+     }
+
+     signInBackBTN.onclick=()=>{
+        document.querySelector("#registration_space").style.top="-100%"
+    }
+     
+}
+
+ </script>
+
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
  <body>
      <div id=logo_main>
@@ -185,6 +383,7 @@ window.onload=()=>{
         <div id="action_bar"> 
             <img src="https://i.ibb.co/s1wRrrG/20220704-092425.png" alt="" class="logo">
              <p>FINTEX</p>
+             <div class="sign_up_container"><div class="sign_in">sign in</div></div>
                      </div>
 
         <div id="home_container">
@@ -193,8 +392,33 @@ window.onload=()=>{
                  better manage their financial operations and progress with utiliing specialied services 
                  . Fintex is ready to make life easy :)</b></p>
                <section> <div class="sign_up">sign up</div> </section>
-                   </div>
+
+              <div id="registration_space">
+                  <form class="sign_up_page" onsubmit="sign_up_checker()">
+                         <section><p>Sign up</p></section>
+                        <section><input type="text" required placeholder="username"></section>
+                        <section><input type="email" required placeholder="email address"></section>
+                        <section><input type="password" required placeholder="password"></section>
+                        <section><input type="password" required placeholder="confirm password"></section>
+                        <section><input type="button" required value="sign up"></section>
+                        <div>
+                          <span class="material-symbols-outlined">
+                          arrow_back_ios
+                          </span></div>
+                  </form>
+                  <form class="sign_in_page" onsubmit="sign_in_checker()">
+                    <section><p>Sign in</p></section>
+                    <section><input type="email" required placeholder="email address"></section>
+                    <section><input type="password" required placeholder="password"></section>
+                    <section><input type="button" value="sign in"></section>
+                    <div>
+                      <span class="material-symbols-outlined">
+                      arrow_back_ios
+                      </span></div>
+                  </form>
+              </div>
+            </div>
+
                     </section>
-        </div>
  </body>
 </html>
